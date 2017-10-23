@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/header';
-import ProductListPage from './pages/productListPage';
-import productDetailPage from './pages/productDetailPage';
+import ProductListContainer from './containers/productListContainer';
+import productDetailContainer from './containers/productDetailContainer';
 
 class App extends Component {
   render() {
@@ -11,8 +11,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Route exact path="/" component={ProductListPage}/>
-          <Route exact path="/product" component={productDetailPage}/>
+          <Route exact path="/" component={ProductListContainer}/>
+          <Route exact path="/product" component={productDetailContainer}/>
         </div>
       </Router>
     );
