@@ -6,7 +6,7 @@ export const formatProductList = (products) => {
       price: value.selling_price,
       category: value.category.name,
       slug: `/product/${value.slug}`,
-      image: `https://rfx-sg-assets.imgix.net/${value.media.find(value => value.is_primary === true).path}?auto=format,compress?q=80&fit=clip&w=254&h=350`
+      image: `https://rfx-sg-assets.imgix.net/${(value.media.find(value => value.is_primary === true) && value.media.find(value => value.is_primary === true).path) || value.media[0].path}?auto=format,compress?q=80&fit=clip&w=254&h=350`
     }
   })
 }
